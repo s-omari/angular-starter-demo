@@ -23,12 +23,12 @@ var Items = [
         'children': [
             {
                 'title': 'material components',
-                'route': '',
+                'route': 'demo/ui-components/material-components',
                 'icon': 'table'
             },
             {
                 'title': 'custom components',
-                'route': '',
+                'route': 'demo/ui-components/custom-components',
                 'icon': 'table'
             }
         ]
@@ -206,6 +206,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_components_ui_components_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ui-components/ui-components.component */ "./src/app/demo/ui-components/ui-components.component.ts");
 /* harmony import */ var _localization_localization_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./localization/localization.component */ "./src/app/demo/localization/localization.component.ts");
 /* harmony import */ var _demo_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./demo.component */ "./src/app/demo/demo.component.ts");
+/* harmony import */ var _ui_components_custom_components_custom_components_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ui-components/custom-components/custom-components.component */ "./src/app/demo/ui-components/custom-components/custom-components.component.ts");
+/* harmony import */ var _ui_components_material_components_material_components_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ui-components/material-components/material-components.component */ "./src/app/demo/ui-components/material-components/material-components.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -220,6 +222,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 // ng dynamic forms
 
 // validations
+
+
 
 
 
@@ -242,7 +246,9 @@ var DemoModule = /** @class */ (function () {
                 _dynamic_form_material_sample_form_component__WEBPACK_IMPORTED_MODULE_8__["MaterialSampleFormComponent"],
                 _ui_components_ui_components_component__WEBPACK_IMPORTED_MODULE_9__["UiComponentsComponent"],
                 _localization_localization_component__WEBPACK_IMPORTED_MODULE_10__["LocalizationComponent"],
-                _demo_component__WEBPACK_IMPORTED_MODULE_11__["DemoComponent"]
+                _demo_component__WEBPACK_IMPORTED_MODULE_11__["DemoComponent"],
+                _ui_components_custom_components_custom_components_component__WEBPACK_IMPORTED_MODULE_12__["CustomComponentsComponent"],
+                _ui_components_material_components_material_components_component__WEBPACK_IMPORTED_MODULE_13__["MaterialComponentsComponent"]
             ],
             providers: [
                 {
@@ -292,19 +298,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _dynamic_form_material_sample_form_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic-form/material-sample-form.component */ "./src/app/demo/dynamic-form/material-sample-form.component.ts");
 /* harmony import */ var _ui_components_ui_components_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui-components/ui-components.component */ "./src/app/demo/ui-components/ui-components.component.ts");
-/* harmony import */ var _localization_localization_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./localization/localization.component */ "./src/app/demo/localization/localization.component.ts");
-/* harmony import */ var _demo_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./demo.component */ "./src/app/demo/demo.component.ts");
+/* harmony import */ var _ui_components_custom_components_custom_components_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui-components/custom-components/custom-components.component */ "./src/app/demo/ui-components/custom-components/custom-components.component.ts");
+/* harmony import */ var _ui_components_material_components_material_components_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui-components/material-components/material-components.component */ "./src/app/demo/ui-components/material-components/material-components.component.ts");
+/* harmony import */ var _localization_localization_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./localization/localization.component */ "./src/app/demo/localization/localization.component.ts");
+/* harmony import */ var _demo_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./demo.component */ "./src/app/demo/demo.component.ts");
+
+
 
 
 
 
 
 var routes = [
-    { path: '', component: _demo_component__WEBPACK_IMPORTED_MODULE_4__["DemoComponent"],
+    {
+        path: '', component: _demo_component__WEBPACK_IMPORTED_MODULE_6__["DemoComponent"],
         children: [
             { path: 'dynamic-form', component: _dynamic_form_material_sample_form_component__WEBPACK_IMPORTED_MODULE_1__["MaterialSampleFormComponent"] },
-            { path: 'ui-components', component: _ui_components_ui_components_component__WEBPACK_IMPORTED_MODULE_2__["UiComponentsComponent"] },
-            { path: 'localization', component: _localization_localization_component__WEBPACK_IMPORTED_MODULE_3__["LocalizationComponent"] },
+            {
+                path: 'ui-components', component: _ui_components_ui_components_component__WEBPACK_IMPORTED_MODULE_2__["UiComponentsComponent"],
+                children: [
+                    { path: 'custom-components', component: _ui_components_custom_components_custom_components_component__WEBPACK_IMPORTED_MODULE_3__["CustomComponentsComponent"] },
+                    { path: 'material-components', component: _ui_components_material_components_material_components_component__WEBPACK_IMPORTED_MODULE_4__["MaterialComponentsComponent"] },
+                ],
+            },
+            { path: 'localization', component: _localization_localization_component__WEBPACK_IMPORTED_MODULE_5__["LocalizationComponent"] },
             { path: 'crud', loadChildren: './crud/crud.module#CrudModule' }
         ]
     },
@@ -711,6 +728,141 @@ var LocalizationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/demo/ui-components/custom-components/custom-components.component.html":
+/*!***************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/custom-components/custom-components.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>User Dropdown</h5>\n      <mat-toolbar>\n        <div class=\"ml-auto d-flex align-items-center\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n\n    </mat-card>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/custom-components/custom-components.component.scss":
+/*!***************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/custom-components/custom-components.component.scss ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/custom-components/custom-components.component.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/custom-components/custom-components.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: CustomComponentsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomComponentsComponent", function() { return CustomComponentsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CustomComponentsComponent = /** @class */ (function () {
+    function CustomComponentsComponent() {
+        this.user = {
+            'avatar': 'https://lh6.googleusercontent.com/-aSC0Dcj7tIg/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7rul_P8FT8_8B5Rl6ki3yY9ztGYcg/s96-c/photo.jpg',
+            'email': 'saleh.omari@247labs.com',
+            'firstName': 'Saleh',
+            'id': '101671379837217301555',
+            'lastName': 'Omari',
+            'name': 'Saleh Omari',
+            'provider': 'GOOGLE'
+        };
+    }
+    CustomComponentsComponent.prototype.ngOnInit = function () {
+    };
+    CustomComponentsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'custom-components',
+            template: __webpack_require__(/*! ./custom-components.component.html */ "./src/app/demo/ui-components/custom-components/custom-components.component.html"),
+            styles: [__webpack_require__(/*! ./custom-components.component.scss */ "./src/app/demo/ui-components/custom-components/custom-components.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CustomComponentsComponent);
+    return CustomComponentsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/material-components/material-components.component.html":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/material-components/material-components.component.html ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Basic Buttons</h5>\n      <div class=\"button-row\">\n        <button mat-button>Basic</button>\n        <button mat-button color=\"primary\">Primary</button>\n        <button mat-button color=\"accent\">Accent</button>\n        <button mat-button color=\"warn\">Warn</button>\n        <button mat-button disabled>Disabled</button>\n        <a mat-button routerLink=\".\">Link</a>\n      </div>\n\n      <h5>Raised Buttons</h5>\n      <div class=\"button-row\">\n        <button mat-raised-button>Basic</button>\n        <button mat-raised-button color=\"primary\">Primary</button>\n        <button mat-raised-button color=\"accent\">Accent</button>\n        <button mat-raised-button color=\"warn\">Warn</button>\n        <button mat-raised-button disabled>Disabled</button>\n        <a mat-raised-button routerLink=\".\">Link</a>\n      </div>\n\n      <h5>Icon Buttons</h5>\n      <div class=\"button-row\">\n        <button mat-icon-button>\n          <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n        </button>\n        <button mat-icon-button color=\"primary\">\n          <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n        </button>\n        <button mat-icon-button color=\"accent\">\n          <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n        </button>\n        <button mat-icon-button color=\"warn\">\n          <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n        </button>\n        <button mat-icon-button disabled>\n          <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n        </button>\n      </div>\n\n\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <h5>Fab Buttons</h5>\n          <div class=\"button-row\">\n            <button mat-fab>Basic</button>\n            <button mat-fab color=\"primary\">Primary</button>\n            <button mat-fab color=\"accent\">Accent</button>\n            <button mat-fab color=\"warn\">Warn</button>\n            <button mat-fab disabled>Disabled</button>\n            <button mat-fab>\n              <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n            </button>\n            <a mat-fab routerLink=\".\">Link</a>\n          </div>\n        </div>\n        <div class=\"col-md-6\">\n          <h5>Mini Fab Buttons</h5>\n          <div class=\"button-row\">\n            <button mat-mini-fab>\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-mini-fab color=\"primary\">\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-mini-fab color=\"accent\">\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-mini-fab color=\"warn\">\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-mini-fab disabled>\n              <mat-icon>favorite</mat-icon>\n            </button>\n            <button mat-mini-fab>\n              <mat-icon>\n                <mat-icon>favorite</mat-icon>\n              </mat-icon>\n            </button>\n            <a mat-mini-fab routerLink=\".\">Link</a>\n          </div>\n        </div>\n      </div>\n    </mat-card>\n  </div>\n\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Chips</h5>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-chip-list>\n            <mat-chip>One fish</mat-chip>\n            <mat-chip>Two fish</mat-chip>\n            <mat-chip color=\"primary\" selected=\"true\">Primary fish</mat-chip>\n            <mat-chip color=\"accent\" selected=\"true\">Accent fish</mat-chip>\n          </mat-chip-list>\n        </div>\n        <div class=\"col\">\n\n          <mat-chip-list class=\"mat-chip-list-stacked\">\n            <mat-chip>One fish</mat-chip>\n            <mat-chip>Two fish</mat-chip>\n            <mat-chip color=\"primary\" selected=\"true\">Primary fish</mat-chip>\n            <mat-chip color=\"accent\" selected=\"true\">Accent fish</mat-chip>\n          </mat-chip-list>\n        </div>\n      </div>\n    </mat-card>\n  </div>\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n\n      <h5>Progress bar</h5>\n      <mat-progress-bar class=\"mb-3\" color=\"primary\" mode=\"determinate\" value=\"40\"></mat-progress-bar>\n      <mat-progress-bar class=\"mb-3\" color=\"accent\" mode=\"indeterminate\"></mat-progress-bar>\n      <mat-progress-bar class=\"mb-3\" mode=\"buffer\"></mat-progress-bar>\n      <mat-progress-bar class=\"mb-3\" color=\"warn\" mode=\"query\"></mat-progress-bar>\n\n\n      <h5>Badges</h5>\n      <p>\n        <span matBadge=\"4\" matBadgeOverlap=\"false\">Text with a badge</span>\n      </p>\n\n      <p>\n        Button with a badge on the left\n        <button mat-raised-button color=\"primary\" matBadge=\"8\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n          Action\n        </button>\n      </p>\n\n      <p>\n        Icon with a badge\n        <mat-icon matBadge=\"15\" matBadgeColor=\"warn\">home</mat-icon>\n      </p>\n\n\n      <h5>Pagination</h5>\n      <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n      </mat-paginator>\n\n      <h5>Tooltip</h5>\n      <button mat-raised-button matTooltip=\"Info about the action\" [matTooltipPosition]=\"'right'\" aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        Action\n      </button>\n\n\n    </mat-card>\n  </div>\n\n\n\n\n\n\n\n\n\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/material-components/material-components.component.scss":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/material-components/material-components.component.scss ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".example-button-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n\n.button-row button {\n  margin: 5px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/material-components/material-components.component.ts":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/demo/ui-components/material-components/material-components.component.ts ***!
+  \*****************************************************************************************/
+/*! exports provided: MaterialComponentsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialComponentsComponent", function() { return MaterialComponentsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MaterialComponentsComponent = /** @class */ (function () {
+    function MaterialComponentsComponent() {
+    }
+    MaterialComponentsComponent.prototype.ngOnInit = function () {
+    };
+    MaterialComponentsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'material-components',
+            template: __webpack_require__(/*! ./material-components.component.html */ "./src/app/demo/ui-components/material-components/material-components.component.html"),
+            styles: [__webpack_require__(/*! ./material-components.component.scss */ "./src/app/demo/ui-components/material-components/material-components.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MaterialComponentsComponent);
+    return MaterialComponentsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/demo/ui-components/ui-components.component.html":
 /*!*****************************************************************!*\
   !*** ./src/app/demo/ui-components/ui-components.component.html ***!
@@ -718,7 +870,7 @@ var LocalizationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"row\">\n\n      <div class=\"col-12\">\n          <mat-card class=\"mt-3 mb-3\">\n              <h5>Basic Buttons</h5>\n              <div class=\"button-row\">\n                <button mat-button>Basic</button>\n                <button mat-button color=\"primary\">Primary</button>\n                <button mat-button color=\"accent\">Accent</button>\n                <button mat-button color=\"warn\">Warn</button>\n                <button mat-button disabled>Disabled</button>\n                <a mat-button routerLink=\".\">Link</a>\n              </div>\n        \n              <h5>Raised Buttons</h5>\n              <div class=\"button-row\">\n                <button mat-raised-button>Basic</button>\n                <button mat-raised-button color=\"primary\">Primary</button>\n                <button mat-raised-button color=\"accent\">Accent</button>\n                <button mat-raised-button color=\"warn\">Warn</button>\n                <button mat-raised-button disabled>Disabled</button>\n                <a mat-raised-button routerLink=\".\">Link</a>\n              </div>\n        \n              <h5>Icon Buttons</h5>\n              <div class=\"button-row\">\n                <button mat-icon-button>\n                  <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                </button>\n                <button mat-icon-button color=\"primary\">\n                  <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                </button>\n                <button mat-icon-button color=\"accent\">\n                  <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                </button>\n                <button mat-icon-button color=\"warn\">\n                  <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                </button>\n                <button mat-icon-button disabled>\n                  <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                </button>\n              </div>\n        \n        \n              <div class=\"row\">\n                <div class=\"col-md-6\">\n                    <h5>Fab Buttons</h5>\n                    <div class=\"button-row\">\n                      <button mat-fab>Basic</button>\n                      <button mat-fab color=\"primary\">Primary</button>\n                      <button mat-fab color=\"accent\">Accent</button>\n                      <button mat-fab color=\"warn\">Warn</button>\n                      <button mat-fab disabled>Disabled</button>\n                      <button mat-fab>\n                        <mat-icon aria-label=\"Example icon-button with a heart icon\">favorite</mat-icon>\n                      </button>\n                      <a mat-fab routerLink=\".\">Link</a>\n                    </div>\n                </div>\n                <div class=\"col-md-6\">\n                    <h5>Mini Fab Buttons</h5>\n                    <div class=\"button-row\">\n                      <button mat-mini-fab>\n                        <mat-icon>favorite</mat-icon>\n                      </button>\n                      <button mat-mini-fab color=\"primary\">\n                        <mat-icon>favorite</mat-icon>\n                      </button>\n                      <button mat-mini-fab color=\"accent\">\n                        <mat-icon>favorite</mat-icon>\n                      </button>\n                      <button mat-mini-fab color=\"warn\">\n                        <mat-icon>favorite</mat-icon>\n                      </button>\n                      <button mat-mini-fab disabled>\n                        <mat-icon>favorite</mat-icon>\n                      </button>\n                      <button mat-mini-fab>\n                        <mat-icon>\n                          <mat-icon>favorite</mat-icon>\n                        </mat-icon>\n                      </button>\n                      <a mat-mini-fab routerLink=\".\">Link</a>\n                    </div>\n                </div>\n              </div>\n          </mat-card>\n        </div>\n   \n      \n      <div class=\"col-12\">\n          <mat-card class=\"mt-3 mb-3\">\n                      <h5>Chips</h5>\n                    <div class=\"row\">\n                      <div class=\"col\">\n                        <mat-chip-list>\n                          <mat-chip>One fish</mat-chip>\n                          <mat-chip>Two fish</mat-chip>\n                          <mat-chip color=\"primary\" selected=\"true\">Primary fish</mat-chip>\n                          <mat-chip color=\"accent\" selected=\"true\">Accent fish</mat-chip>\n                        </mat-chip-list>\n                      </div>\n                      <div class=\"col\">\n              \n                        <mat-chip-list class=\"mat-chip-list-stacked\">\n                          <mat-chip>One fish</mat-chip>\n                          <mat-chip>Two fish</mat-chip>\n                          <mat-chip color=\"primary\" selected=\"true\">Primary fish</mat-chip>\n                          <mat-chip color=\"accent\" selected=\"true\">Accent fish</mat-chip>\n                        </mat-chip-list>\n                      </div>\n                    </div>\n          </mat-card>\n      </div>\n\n      <div class=\"col-12\">\n        <mat-card class=\"mt-3 mb-3\">\n\n            <h5>Progress bar</h5>\n            <mat-progress-bar class=\"mb-3\" color=\"primary\"  mode=\"determinate\" value=\"40\"></mat-progress-bar>\n            <mat-progress-bar class=\"mb-3\" color=\"accent\" mode=\"indeterminate\"></mat-progress-bar>\n            <mat-progress-bar class=\"mb-3\" mode=\"buffer\"></mat-progress-bar>\n            <mat-progress-bar class=\"mb-3\" color=\"warn\" mode=\"query\"></mat-progress-bar>\n      \n      \n            <h5>Badges</h5>\n            <p><span matBadge=\"4\" matBadgeOverlap=\"false\">Text with a badge</span></p>\n      \n            <p>\n              Button with a badge on the left\n              <button mat-raised-button color=\"primary\" matBadge=\"8\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n                Action\n              </button>\n            </p>\n      \n            <p>\n              Icon with a badge\n              <mat-icon matBadge=\"15\" matBadgeColor=\"warn\">home</mat-icon>\n            </p>\n      \n      \n            <h5>Pagination</h5>\n            <mat-paginator [length]=\"100\" [pageSize]=\"10\" [pageSizeOptions]=\"[5, 10, 25, 100]\">\n            </mat-paginator>\n            \n            <h5>Tooltip</h5>\n            <button mat-raised-button matTooltip=\"Info about the action\" [matTooltipPosition]=\"'right'\" aria-label=\"Button that displays a tooltip when focused or hovered over\">\n              Action\n            </button>      \n      \n\n        </mat-card>\n      </div>\n  \n      \n      \n      \n      \n  \n      \n      \n\n\n    \n      </div>\n\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
