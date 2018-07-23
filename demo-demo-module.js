@@ -12,11 +12,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Items", function() { return Items; });
 var Items = [
     {
-        'title': 'Dynamic Form',
-        'route': 'demo/dynamic-form',
-        'icon': 'chrome_reader_mode'
-    },
-    {
         'title': 'UI Components',
         'route': 'demo/ui-components',
         'icon': 'important_devices',
@@ -32,6 +27,11 @@ var Items = [
                 'icon': 'table'
             }
         ]
+    },
+    {
+        'title': 'Dynamic Form',
+        'route': 'demo/dynamic-form',
+        'icon': 'chrome_reader_mode'
     },
     {
         'title': 'Localization',
@@ -735,7 +735,7 @@ var LocalizationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>User Dropdown</h5>\n      <mat-toolbar>\n        <div class=\"ml-auto d-flex align-items-center\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n\n    </mat-card>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>User Dropdown</h5>\n      <mat-toolbar>\n        <div class=\"ml-auto d-flex align-items-center\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n    </mat-card>\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Collapse menu</h5>\n      <side-menu [menuItems]=\"menuItems\"></side-menu>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Breadcrumbs</h5>\n      <breadcrumbs [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>\n\n\n    </mat-card>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -782,6 +782,41 @@ var CustomComponentsComponent = /** @class */ (function () {
             'name': 'Saleh Omari',
             'provider': 'GOOGLE'
         };
+        this.menuItems = [
+            {
+                'title': 'Dynamic Form',
+                'route': 'demo/dynamic-form',
+                'icon': 'chrome_reader_mode'
+            },
+            {
+                'title': 'UI Components',
+                'route': 'demo/ui-components',
+                'icon': 'important_devices',
+                'children': [
+                    {
+                        'title': 'material components',
+                        'route': 'demo/ui-components/material-components',
+                        'icon': 'table'
+                    },
+                    {
+                        'title': 'custom components',
+                        'route': 'demo/ui-components/custom-components',
+                        'icon': 'table'
+                    }
+                ]
+            }
+        ];
+        this.breadcrumbs = [
+            {
+                'title': 'Menu',
+                'type': 'menu',
+                'menu-items': [{ title: 'item 1' }, { title: 'item 1' }],
+            },
+            {
+                'title': 'Category',
+                'type': 'button',
+            },
+        ];
     }
     CustomComponentsComponent.prototype.ngOnInit = function () {
     };

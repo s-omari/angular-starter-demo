@@ -2995,6 +2995,73 @@ var AccordionItemComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/shared/components/breadcrumbs/breadcrumbs.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"breadcrumbs d-flex align-items-center justify-content-start\">\n  <li>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      Menu</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n  <li>></li>\n  <li>\n    <button mat-button>Category</button>\n  </li>\n  <li>></li>\n  <li>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n\n      Inner Menu 2</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n</ul>\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.scss":
+/*!**************************************************************************!*\
+  !*** ./src/app/shared/components/breadcrumbs/breadcrumbs.component.scss ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts ***!
+  \************************************************************************/
+/*! exports provided: BreadcrumbsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbsComponent", function() { return BreadcrumbsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BreadcrumbsComponent = /** @class */ (function () {
+    function BreadcrumbsComponent() {
+    }
+    BreadcrumbsComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], BreadcrumbsComponent.prototype, "breadcrumbs", void 0);
+    BreadcrumbsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'breadcrumbs',
+            template: __webpack_require__(/*! ./breadcrumbs.component.html */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.html"),
+            styles: [__webpack_require__(/*! ./breadcrumbs.component.scss */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BreadcrumbsComponent);
+    return BreadcrumbsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/components/side-menu/side-menu.component.html":
 /*!**********************************************************************!*\
   !*** ./src/app/shared/components/side-menu/side-menu.component.html ***!
@@ -3775,12 +3842,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/user-dropdown/user-dropdown.component */ "./src/app/shared/components/user-dropdown/user-dropdown.component.ts");
 /* harmony import */ var _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/side-menu/side-menu.component */ "./src/app/shared/components/side-menu/side-menu.component.ts");
 /* harmony import */ var _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion-item/accordion-item.component */ "./src/app/shared/components/accordion-item/accordion-item.component.ts");
+/* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/breadcrumbs/breadcrumbs.component */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -3810,6 +3879,7 @@ var SharedModule = /** @class */ (function () {
                 _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["UserDropdownComponent"],
                 _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__["SideMenuComponent"],
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
+                _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
             ],
             exports: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -3818,6 +3888,7 @@ var SharedModule = /** @class */ (function () {
                 _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["UserDropdownComponent"],
                 _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__["SideMenuComponent"],
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
+                _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
