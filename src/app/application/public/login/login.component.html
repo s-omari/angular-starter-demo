@@ -1,0 +1,57 @@
+
+<div class="d-flex justify-content-center mt-5">
+        
+    <mat-card class="pt-0" >
+     <mat-progress-bar [style.visibility]="loading ? 'visible' : 'hidden'" class="mb-3" color="accent" mode="indeterminate"></mat-progress-bar>
+
+     <mat-card-header>
+     
+            <div class="brand-box w-100 mb-3">
+              <div class="logo2 brand m-auto">
+                <a href="#">brand name</a>
+              </div>
+            </div>
+          </mat-card-header>
+
+
+
+      <mat-card-content>
+
+          <pre>Email : admin@admin.com<br/>Password : password
+          </pre>
+        
+        <form class="d-flex flex-column ">
+            <mat-form-field >
+                <input matInput class="w-100" placeholder="email" [(ngModel)]="email" name="email" required>
+                </mat-form-field>
+                <mat-form-field >
+                    <input matInput  class="w-100" placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+                </mat-form-field>
+        </form>
+  
+
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button class="w-100 mb-2" (click)="login()" color="primary">Login</button>
+
+
+
+            
+        <div class="d-flex justify-content-center">
+            <button mat-button routerLink="../reset-password"  >Forgot Password</button>
+            <button mat-button routerLink="../signup"  >Sign Up</button>
+        </div>
+
+        <div class="w-100 mt-3 mb-3">
+                <p class="text-center">or</p>
+                    <button mat-button  class="btn btn-social-icon btn-google w-100" (click)="signInWithGoogle()">
+                        <span class="fab fa-google mr-3"></span>Login with Google
+                    </button>
+                    <button mat-button  class="btn btn-social-icon btn-facebook w-100" (click)="signInWithFB()">
+                        <span class="fab fa-facebook mr-3"></span>Login with Facebook
+                    </button>    
+                </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>

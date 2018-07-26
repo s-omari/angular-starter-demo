@@ -1,0 +1,167 @@
+<div class="row">
+
+  <div class="col-12">
+    <mat-card class="mt-3 mb-3">
+      <h5>Basic Buttons</h5>
+      <div class="button-row">
+        <button mat-button>Basic</button>
+        <button mat-button color="primary">Primary</button>
+        <button mat-button color="accent">Accent</button>
+        <button mat-button color="warn">Warn</button>
+        <button mat-button disabled>Disabled</button>
+        <a mat-button routerLink=".">Link</a>
+      </div>
+
+      <h5>Raised Buttons</h5>
+      <div class="button-row">
+        <button mat-raised-button>Basic</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+        <button mat-raised-button disabled>Disabled</button>
+        <a mat-raised-button routerLink=".">Link</a>
+      </div>
+
+      <h5>Icon Buttons</h5>
+      <div class="button-row">
+        <button mat-icon-button>
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button>
+        <button mat-icon-button color="primary">
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button>
+        <button mat-icon-button color="accent">
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button>
+        <button mat-icon-button color="warn">
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button>
+        <button mat-icon-button disabled>
+          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        </button>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Fab Buttons</h5>
+          <div class="button-row">
+            <button mat-fab>Basic</button>
+            <button mat-fab color="primary">Primary</button>
+            <button mat-fab color="accent">Accent</button>
+            <button mat-fab color="warn">Warn</button>
+            <button mat-fab disabled>Disabled</button>
+            <button mat-fab>
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <a mat-fab routerLink=".">Link</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>Mini Fab Buttons</h5>
+          <div class="button-row">
+            <button mat-mini-fab>
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-mini-fab color="primary">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-mini-fab color="accent">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-mini-fab disabled>
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-mini-fab>
+              <mat-icon>
+                <mat-icon>favorite</mat-icon>
+              </mat-icon>
+            </button>
+            <a mat-mini-fab routerLink=".">Link</a>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div class="col-12">
+    <mat-card class="mt-3 mb-3">
+      <h5>Chips</h5>
+      <div class="row">
+        <div class="col">
+          <mat-chip-list>
+            <mat-chip>One fish</mat-chip>
+            <mat-chip>Two fish</mat-chip>
+            <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+            <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+          </mat-chip-list>
+        </div>
+        <div class="col">
+
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip>One fish</mat-chip>
+            <mat-chip>Two fish</mat-chip>
+            <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+            <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="col-12">
+    <mat-card class="mt-3 mb-3">
+
+      <h5>Progress bar</h5>
+      <mat-progress-bar class="mb-3" color="primary" mode="determinate" value="40"></mat-progress-bar>
+      <mat-progress-bar class="mb-3" color="accent" mode="indeterminate"></mat-progress-bar>
+      <mat-progress-bar class="mb-3" mode="buffer"></mat-progress-bar>
+      <mat-progress-bar class="mb-3" color="warn" mode="query"></mat-progress-bar>
+
+
+      <h5>Badges</h5>
+      <p>
+        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+      </p>
+
+      <p>
+        Button with a badge on the left
+        <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+          Action
+        </button>
+      </p>
+
+      <p>
+        Icon with a badge
+        <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      </p>
+
+
+      <h5>Pagination</h5>
+      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+
+      <h5>Tooltip</h5>
+      <button mat-raised-button matTooltip="Info about the action" [matTooltipPosition]="'right'" aria-label="Button that displays a tooltip when focused or hovered over">
+        Action
+      </button>
+
+
+    </mat-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

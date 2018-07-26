@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// default Theme.
+// -----------------------------------------------------------------------------
+// Brand logos
+// ( logo-name file-name extension max-width max-height width height), 
+$brand-logos: ( (logo1 mdplogo svg "" "" 300px 50px), (logo2 247dark png 140px "" "" 50px));
+.logo2 {
+  background-color: #fff;
+  padding: 0;
+  border-radius: 20px;
+  width: 140px;
+  padding: 3px 8px 3px 0;
+  border: 1px solid #99358B;
+  margin: 0px;
+}
+
+@include brand-logos();

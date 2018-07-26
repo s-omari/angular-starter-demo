@@ -1,0 +1,19 @@
+
+<form [formGroup]="formGroup">
+                
+  <!-- <dynamic-material-form
+  (blur)="onBlur($event)"
+  (change)="onChange($event)"
+  (focus)="onFocus($event)"
+  (matEvent)="onMatEvent($event)"></dynamic-material-form> -->
+
+  <dynamic-material-form
+  [group]="formGroup"
+  [model]="formModel"
+  ></dynamic-material-form>
+
+
+  <button type="button" (click)="addItem()">Add item</button>
+  <button type="button" (click)="clear()">Remove all items</button>
+  
+</form>

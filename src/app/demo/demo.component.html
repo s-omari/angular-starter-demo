@@ -1,0 +1,64 @@
+
+
+<mat-sidenav-container class="sidenav-container">
+
+  
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+      <mat-toolbar color="primary">
+          <button  mat-button routerLink=''>
+              <i class="fab fa-angular fa-2x"></i>
+              Angular Starter
+            </button>
+      </mat-toolbar>
+
+      <side-menu [menuItems]="menuItems" [activeItem]="activatedUrl" (onSelect)="selectMenuItem($event)"></side-menu>
+
+    </mat-sidenav>
+  
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+  
+          <mat-icon fontSet="fa" fontIcon="fa-bars"></mat-icon>
+  
+        </button>
+        <span *ngIf="(isHandset$ | async)" >
+            <button  mat-button routerLink=''>
+                <i class="fab fa-angular fa-2x"></i>
+                Angular Starter
+              </button>
+        </span>
+  
+      <div class="ml-auto d-flex align-items-center">
+        <!-- <language-switcher></language-switcher> -->
+        <theme-switcher [selectedTheme]="appService.appTheme" (onSelectTheme)="appService.setTheme($event)"></theme-switcher>
+        <user-dropdown *ngIf="user" (onSignOut)="signOut()" [user]="user"></user-dropdown>
+      </div>
+  
+  
+  
+      </mat-toolbar>
+  
+      <div class="container-fluid h-100 mb-5 pt-3 ">
+          <router-outlet></router-outlet>
+      </div>
+  
+  
+    </mat-sidenav-content>
+  
+  
+  
+  </mat-sidenav-container>
+  

@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center mt-5">
+
+
+  <mat-card class="pt-0">
+      <mat-progress-bar [style.visibility]="loading ? 'visible' : 'hidden'" class="mb-3" color="accent" mode="indeterminate"></mat-progress-bar>
+    <mat-card-header>
+     
+      <div class="brand-box w-100 mb-3">
+        <div class="logo2 brand m-auto">
+          <a href="#">brand name</a>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form class="d-flex flex-column">
+          <mat-form-field >
+              <input matInput  class="w-100" placeholder="Full name" [(ngModel)]="name" type="name" name="name" required>
+          </mat-form-field>
+
+        <mat-form-field >
+          <input matInput class="w-100" placeholder="Email" [(ngModel)]="email" name="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput class="w-100" placeholder="Provider" [(ngModel)]="provider" name="provider" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput class="w-100" placeholder="Provide Id" [(ngModel)]="provider_id" name="provider_id" >
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-select placeholder="Role" [(value)]="role_id" required>
+              <mat-option value="1">Normal</mat-option>
+              <mat-option value="2">Server</mat-option>
+              <mat-option value="3">Manager</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+        <mat-form-field >
+            <input matInput  class="w-100" placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+        </mat-form-field>
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button class="w-100 mb-2" (click)="signUp()" color="primary">Sign up</button>
+
+      <div class="d-flex justify-content-center">
+          <button mat-raised-button routerLink="../login"  >Back to Login</button>
+      </div>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

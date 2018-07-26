@@ -1,0 +1,34 @@
+
+#Right .toggles {
+    margin: 9px 0;
+    visibility: hidden;
+}
+#Right:hover .toggles {
+    visibility: visible;
+}
+
+#Left .toggles span {
+    cursor: pointer;
+}
+#Left .toggles {
+    margin: -2px -4px 1px;
+    visibility: hidden;
+}
+
+.toggles {
+    color: #Aeaeae;
+}
+
+#Left:hover .toggles {
+    visibility: visible;
+}
+
+
+.toggles span {
+    cursor: pointer;
+
+}
+
+ .toggles span:hover {
+    color: #191919;
+}

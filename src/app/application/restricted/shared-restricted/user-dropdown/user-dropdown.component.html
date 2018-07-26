@@ -1,0 +1,31 @@
+<div class="user-dropdown">
+    <div  class="d-flex align-items-center justify-content-center pointer"
+        [mdePopoverTriggerFor]="appPopover"
+        mdePopoverTriggerOn="click"
+        [mdePopoverCloseOnClick]="false">
+  
+        <img src="{{ user.avatar }}">
+        <p class="display-name">{{ user.firstName }} </p>
+  
+    </div>
+  
+   
+  
+    <mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false"   style="position: fixed;">
+      <mat-card>
+        <mat-card-content>
+            <div class="d-flex flex-column">
+              <div class="w-100">
+                  {{ user.name }} 
+                  {{ user.email }}
+              </div>
+                
+                <button mat-button>Settings</button>
+                <button mat-button (click)="signOut()">Sign out</button>
+                
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </mde-popover>
+  
+        </div>

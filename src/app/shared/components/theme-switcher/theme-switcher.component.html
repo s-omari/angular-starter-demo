@@ -1,0 +1,21 @@
+<button class="px-0 mx-2" mat-icon-button [matMenuTriggerFor]="colorSwitcher">
+    <mat-icon class="md-light">palette</mat-icon>
+  </button>
+<mat-menu #colorSwitcher="matMenu">
+    <button class="vc" *ngIf="currentTheme != 'red-dark-theme'" mat-menu-item (click)="selectTheme('red-dark-theme')">
+      <div class="color-box" style="background-color:red;"></div>
+      <div class="color-box mr-2" style="background-color:black;"></div>
+      Dark Red
+    </button>
+    <button class="vc" *ngIf="currentTheme!='red-theme'" mat-menu-item (click)="selectTheme('red-theme')">
+      <div class="color-box" style="background-color:red;"></div>
+      <div class="color-box mr-2" style="background-color:#fafafa;"></div>
+      Light Red
+    </button>
+    <button class="vc" *ngIf="currentTheme != 'purple-theme'" mat-menu-item (click)="selectTheme('purple-theme')">
+      <div class="color-box" style="background-color:purple;"></div>
+      <div class="color-box mr-2" style="background-color:#fafafa;"></div>
+      Light Purple
+    </button>
+  
+  </mat-menu>

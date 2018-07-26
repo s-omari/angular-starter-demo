@@ -1,0 +1,21 @@
+<button class="px-0 mx-2" mat-button [matMenuTriggerFor]="languageSwitcher">
+    <mat-icon class="md-light">keyboard_arrow_down</mat-icon>
+    {{selectedLanguage == 'en' ? 'English' : 'French'}}
+  </button>
+  <mat-menu #languageSwitcher="matMenu">
+    <button mat-menu-item (click)="switchLanguage('en');">
+      <span translate>English</span>
+      <mat-icon *ngIf="selectedLanguage == 'en'">done</mat-icon>
+    </button>
+    <button mat-menu-item (click)="switchLanguage('fr');">
+      <span translate>French</span>
+      <mat-icon *ngIf="selectedLanguage == 'fr'">done</mat-icon>
+    </button>
+  </mat-menu>
+
+
+  <!-- <select #langSelect (change)="switchLanguage(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" 
+      [value]="lang" 
+      [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select> -->
