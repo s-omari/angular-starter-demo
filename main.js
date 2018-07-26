@@ -3846,6 +3846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
 /* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-highlightjs */ "./node_modules/ngx-highlightjs/fesm5/ngx-highlightjs.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3882,6 +3883,7 @@ var DEFAULT_SWIPER_CONFIG = {
         el: '.swiper-pagination',
     },
 };
+
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -3894,7 +3896,8 @@ var SharedModule = /** @class */ (function () {
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
                 _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"],
                 ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"]
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"].forRoot({ theme: 'agate' })
             ],
             declarations: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -3916,7 +3919,8 @@ var SharedModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
                 ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"]
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"]
             ],
             providers: [
                 {
