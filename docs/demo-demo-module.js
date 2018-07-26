@@ -29,16 +29,6 @@ var Items = [
         ]
     },
     {
-        'title': 'Dynamic Form',
-        'route': 'demo/dynamic-form',
-        'icon': 'chrome_reader_mode'
-    },
-    {
-        'title': 'Localization',
-        'route': 'demo/localization',
-        'icon': 'language'
-    },
-    {
         'title': 'CRUD',
         'type': 'crud',
         'route': '',
@@ -57,6 +47,16 @@ var Items = [
                 'icon': 'star'
             }
         ]
+    },
+    {
+        'title': 'Dynamic Form',
+        'route': 'demo/dynamic-form',
+        'icon': 'chrome_reader_mode'
+    },
+    {
+        'title': 'Localization',
+        'route': 'demo/localization',
+        'icon': 'language'
     }
 ];
 

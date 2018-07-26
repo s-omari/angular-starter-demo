@@ -3002,7 +3002,7 @@ var AccordionItemComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"breadcrumbs d-flex align-items-center justify-content-start\">\n  <li>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n      Menu</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n  <li>></li>\n  <li>\n    <button mat-button>Category</button>\n  </li>\n  <li>></li>\n  <li>\n    <button mat-button [matMenuTriggerFor]=\"menu\">\n\n      Inner Menu 2</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n</ul>\n"
+module.exports = "<ul class=\"breadcrumbs d-flex align-items-center justify-content-start\">\n  <li>\n    <button mat-button class=\"small-button\" [matMenuTriggerFor]=\"menu1\">\n      Menu\n      <mat-icon>keyboard_arrow_down</mat-icon>\n    </button>\n    <mat-menu [overlapTrigger]=\"false\" #menu1=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n  <li class=\"divider mr-2 ml-2\">\n    /\n  </li>\n  <li>\n    <button mat-button class=\"small-button\">Category</button>\n  </li>\n  <li class=\"divider mr-2 ml-2\">\n    /\n  </li>\n  <li>\n    <button mat-button class=\"small-button\" [matMenuTriggerFor]=\"menu\">\n\n      Inner Menu 2\n      <mat-icon>keyboard_arrow_down</mat-icon>\n    </button>\n    <mat-menu class=\"small-menu\" [overlapTrigger]=\"false\" #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -3013,7 +3013,7 @@ module.exports = "<ul class=\"breadcrumbs d-flex align-items-center justify-cont
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".divider {\n  color: #cacaca !important;\n  font-size: 15px; }\n\nul.breadcrumbs li {\n  line-height: 0; }\n\nbutton.mat-menu-item {\n  line-height: 26px !important;\n  height: 32px !important;\n  font-size: 14px; }\n"
 
 /***/ }),
 
@@ -3861,6 +3861,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+// Import your AvatarModule
+// import { AvatarModule } from 'ngx-avatar';
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
