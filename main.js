@@ -3062,38 +3062,38 @@ var BreadcrumbsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/components/side-menu/side-menu.component.html":
+/***/ "./src/app/shared/components/code-tabs/code-tabs.component.html":
 /*!**********************************************************************!*\
-  !*** ./src/app/shared/components/side-menu/side-menu.component.html ***!
+  !*** ./src/app/shared/components/code-tabs/code-tabs.component.html ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list>\n    <div *ngFor=\"let item of menuItems\" >\n\n\n            <mat-list-item *ngIf=\"!item.children\" [class.active]=\"activeItem == '/'+item.route\"> \n                <a class=\"w-100 h-100 d-flex align-items-center\"\n                    (click)=\"onSelectItem(item)\">\n                <span class=\"icon-holder mr-3\" ><mat-icon >{{item.icon}}</mat-icon></span>\n                <span>{{item.title}}</span>\n                </a>\n                <span *ngIf=\"item.children\">\n                        <mat-icon >keyboard_arrow_down</mat-icon>\n                </span>\n            </mat-list-item>\n        \n\n\n        <accordion-item *ngIf=\"item.children\"\n        [item]=\"item\" \n        [activeItem]=\"activatedUrl\" \n        (onSelect)=\"onSelectItem($event)\"></accordion-item>\n</div>\n\n</mat-nav-list>\n\n"
+module.exports = "<mat-tab-group>\n\n  <mat-tab *ngFor=\"let tab of tabs\">\n    <ng-template mat-tab-label>\n      {{tab.title}}\n    </ng-template>\n    <pre><code highlight [textContent]=\"tab.code\"></code></pre>\n  </mat-tab>\n\n</mat-tab-group>\n"
 
 /***/ }),
 
-/***/ "./src/app/shared/components/side-menu/side-menu.component.scss":
+/***/ "./src/app/shared/components/code-tabs/code-tabs.component.scss":
 /*!**********************************************************************!*\
-  !*** ./src/app/shared/components/side-menu/side-menu.component.scss ***!
+  !*** ./src/app/shared/components/code-tabs/code-tabs.component.scss ***!
   \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".active {\n  background-color: #c4c4c4; }\n  .active .icon-holder {\n    background-color: #ffffff; }\n  .icon-holder {\n  background-color: #F5F5F5;\n  border-radius: 50%;\n  padding: 7px 0 0 0;\n  text-align: center;\n  width: 40px;\n  height: 40px; }\n  .sub-menu {\n  background-color: #F5F5F5; }\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/shared/components/side-menu/side-menu.component.ts":
+/***/ "./src/app/shared/components/code-tabs/code-tabs.component.ts":
 /*!********************************************************************!*\
-  !*** ./src/app/shared/components/side-menu/side-menu.component.ts ***!
+  !*** ./src/app/shared/components/code-tabs/code-tabs.component.ts ***!
   \********************************************************************/
-/*! exports provided: SideMenuComponent */
+/*! exports provided: CodeTabsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SideMenuComponent", function() { return SideMenuComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeTabsComponent", function() { return CodeTabsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3105,37 +3105,104 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var SideMenuComponent = /** @class */ (function () {
-    function SideMenuComponent() {
+var CodeTabsComponent = /** @class */ (function () {
+    function CodeTabsComponent() {
+    }
+    CodeTabsComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CodeTabsComponent.prototype, "tabs", void 0);
+    CodeTabsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'code-tabs',
+            template: __webpack_require__(/*! ./code-tabs.component.html */ "./src/app/shared/components/code-tabs/code-tabs.component.html"),
+            styles: [__webpack_require__(/*! ./code-tabs.component.scss */ "./src/app/shared/components/code-tabs/code-tabs.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CodeTabsComponent);
+    return CodeTabsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/collapse-menu/collapse-menu.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/collapse-menu/collapse-menu.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-nav-list>\n  <div *ngFor=\"let item of menuItems\">\n\n    <mat-list-item *ngIf=\"!item.children\" [class.active]=\"activeItem == '/'+item.route\">\n      <a class=\"w-100 h-100 d-flex align-items-center\" (click)=\"onSelectItem(item)\">\n        <span class=\"icon-holder mr-3\">\n          <mat-icon>{{item.icon}}</mat-icon>\n        </span>\n        <span>{{item.title}}</span>\n      </a>\n      <span *ngIf=\"item.children\">\n        <mat-icon>keyboard_arrow_down</mat-icon>\n      </span>\n    </mat-list-item>\n\n\n    <accordion-item *ngIf=\"item.children\" [item]=\"item\" [activeItem]=\"activatedUrl\" (onSelect)=\"onSelectItem($event)\"></accordion-item>\n  </div>\n\n</mat-nav-list>\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/collapse-menu/collapse-menu.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/collapse-menu/collapse-menu.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".active {\n  background-color: #c4c4c4; }\n  .active .icon-holder {\n    background-color: #ffffff; }\n  .icon-holder {\n  background-color: #F5F5F5;\n  border-radius: 50%;\n  padding: 7px 0 0 0;\n  text-align: center;\n  width: 40px;\n  height: 40px; }\n  .sub-menu {\n  background-color: #F5F5F5; }\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/collapse-menu/collapse-menu.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/shared/components/collapse-menu/collapse-menu.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: CollapseMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollapseMenuComponent", function() { return CollapseMenuComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CollapseMenuComponent = /** @class */ (function () {
+    function CollapseMenuComponent() {
         this.onSelect = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
-    SideMenuComponent.prototype.ngOnInit = function () {
+    CollapseMenuComponent.prototype.ngOnInit = function () {
     };
-    SideMenuComponent.prototype.onSelectItem = function (item) {
+    CollapseMenuComponent.prototype.onSelectItem = function (item) {
         this.onSelect.emit(item);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Object)
-    ], SideMenuComponent.prototype, "menuItems", void 0);
+    ], CollapseMenuComponent.prototype, "menuItems", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Object)
-    ], SideMenuComponent.prototype, "activeItem", void 0);
+    ], CollapseMenuComponent.prototype, "activeItem", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", Object)
-    ], SideMenuComponent.prototype, "onSelect", void 0);
-    SideMenuComponent = __decorate([
+    ], CollapseMenuComponent.prototype, "onSelect", void 0);
+    CollapseMenuComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'side-menu',
-            template: __webpack_require__(/*! ./side-menu.component.html */ "./src/app/shared/components/side-menu/side-menu.component.html"),
-            styles: [__webpack_require__(/*! ./side-menu.component.scss */ "./src/app/shared/components/side-menu/side-menu.component.scss")],
+            selector: 'collapse-menu',
+            template: __webpack_require__(/*! ./collapse-menu.component.html */ "./src/app/shared/components/collapse-menu/collapse-menu.component.html"),
+            styles: [__webpack_require__(/*! ./collapse-menu.component.scss */ "./src/app/shared/components/collapse-menu/collapse-menu.component.scss")],
             changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
         }),
         __metadata("design:paramtypes", [])
-    ], SideMenuComponent);
-    return SideMenuComponent;
+    ], CollapseMenuComponent);
+    return CollapseMenuComponent;
 }());
 
 
@@ -3552,6 +3619,7 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatChipsModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatBadgeModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTooltipModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]
             ],
             exports: [
                 _material_extended_mde__WEBPACK_IMPORTED_MODULE_2__["MdePopoverModule"],
@@ -3575,6 +3643,7 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatChipsModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatBadgeModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTooltipModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]
             ],
             providers: [
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconRegistry"],
@@ -3840,13 +3909,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/theme-switcher/theme-switcher.component */ "./src/app/shared/components/theme-switcher/theme-switcher.component.ts");
 /* harmony import */ var _language_switcher_language_switcher_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./language-switcher/language-switcher.component */ "./src/app/shared/language-switcher/language-switcher.component.ts");
 /* harmony import */ var _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/user-dropdown/user-dropdown.component */ "./src/app/shared/components/user-dropdown/user-dropdown.component.ts");
-/* harmony import */ var _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/side-menu/side-menu.component */ "./src/app/shared/components/side-menu/side-menu.component.ts");
+/* harmony import */ var _components_collapse_menu_collapse_menu_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/collapse-menu/collapse-menu.component */ "./src/app/shared/components/collapse-menu/collapse-menu.component.ts");
 /* harmony import */ var _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion-item/accordion-item.component */ "./src/app/shared/components/accordion-item/accordion-item.component.ts");
 /* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/breadcrumbs/breadcrumbs.component */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/code-tabs/code-tabs.component */ "./src/app/shared/components/code-tabs/code-tabs.component.ts");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-highlightjs */ "./node_modules/ngx-highlightjs/fesm5/ngx-highlightjs.js");
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3865,7 +3935,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 // Import your AvatarModule
+
+// Import  HighlightModule
 
 
 var DEFAULT_SWIPER_CONFIG = {
@@ -3883,7 +3956,6 @@ var DEFAULT_SWIPER_CONFIG = {
         el: '.swiper-pagination',
     },
 };
-
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -3895,36 +3967,38 @@ var SharedModule = /** @class */ (function () {
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
                 _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"],
-                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"].forRoot({ theme: 'agate' })
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_13__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"].forRoot({ theme: 'github' })
             ],
             declarations: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
                 _language_switcher_language_switcher_component__WEBPACK_IMPORTED_MODULE_7__["LanguageSwitcherComponent"],
                 _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["UserDropdownComponent"],
-                _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__["SideMenuComponent"],
+                _components_collapse_menu_collapse_menu_component__WEBPACK_IMPORTED_MODULE_9__["CollapseMenuComponent"],
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
                 _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
+                _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"],
             ],
             exports: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
                 _language_switcher_language_switcher_component__WEBPACK_IMPORTED_MODULE_7__["LanguageSwitcherComponent"],
                 _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"],
                 _components_user_dropdown_user_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["UserDropdownComponent"],
-                _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__["SideMenuComponent"],
+                _components_collapse_menu_collapse_menu_component__WEBPACK_IMPORTED_MODULE_9__["CollapseMenuComponent"],
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
                 _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"],
-                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"]
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_13__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"],
+                _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"]
             ],
             providers: [
                 {
-                    provide: ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SWIPER_CONFIG"],
+                    provide: ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SWIPER_CONFIG"],
                     useValue: DEFAULT_SWIPER_CONFIG
                 }
             ]

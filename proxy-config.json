@@ -1,9 +1,0 @@
-{
-    "/api" : {
-        "target" : "http://resto.thedemo.co//api/" ,
-        "secure": false,
-        "pathRewrite": {"^/api" : ""} ,
-        "changeOrigin": true 
-        
-    }
-}

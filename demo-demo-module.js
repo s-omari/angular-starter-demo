@@ -70,7 +70,7 @@ var Items = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<mat-sidenav-container class=\"sidenav-container\">\n\n  \n    <mat-sidenav\n      #drawer\n      class=\"sidenav\"\n      fixedInViewport=\"true\"\n      [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n      [opened]=\"!(isHandset$ | async)\">\n      <mat-toolbar color=\"primary\">\n          <button  mat-button routerLink=''>\n              <i class=\"fab fa-angular fa-2x\"></i>\n              Angular Starter\n            </button>\n      </mat-toolbar>\n\n      <side-menu [menuItems]=\"menuItems\" [activeItem]=\"activatedUrl\" (onSelect)=\"selectMenuItem($event)\"></side-menu>\n\n    </mat-sidenav>\n  \n  \n    <mat-sidenav-content>\n      <mat-toolbar color=\"primary\">\n        <button\n          type=\"button\"\n          aria-label=\"Toggle sidenav\"\n          mat-icon-button\n          (click)=\"drawer.toggle()\"\n          *ngIf=\"isHandset$ | async\">\n  \n          <mat-icon fontSet=\"fa\" fontIcon=\"fa-bars\"></mat-icon>\n  \n        </button>\n        <span *ngIf=\"(isHandset$ | async)\" >\n            <button  mat-button routerLink=''>\n                <i class=\"fab fa-angular fa-2x\"></i>\n                Angular Starter\n              </button>\n        </span>\n  \n      <div class=\"ml-auto d-flex align-items-center\">\n        <!-- <language-switcher></language-switcher> -->\n        <theme-switcher [selectedTheme]=\"appService.appTheme\" (onSelectTheme)=\"appService.setTheme($event)\"></theme-switcher>\n        <user-dropdown *ngIf=\"user\" (onSignOut)=\"signOut()\" [user]=\"user\"></user-dropdown>\n      </div>\n  \n  \n  \n      </mat-toolbar>\n  \n      <div class=\"container-fluid h-100 mb-5 pt-3 \">\n          <router-outlet></router-outlet>\n      </div>\n  \n  \n    </mat-sidenav-content>\n  \n  \n  \n  </mat-sidenav-container>\n  "
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n\n\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\" [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">\n      <button mat-button routerLink=''>\n        <i class=\"fab fa-angular fa-2x\"></i>\n        Angular Starter\n      </button>\n    </mat-toolbar>\n\n    <collapse-menu [menuItems]=\"menuItems\" [activeItem]=\"activatedUrl\" (onSelect)=\"selectMenuItem($event)\"></collapse-menu>\n\n  </mat-sidenav>\n\n\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\" class=\"header fixed-header\">\n      <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\" *ngIf=\"isHandset$ | async\">\n\n        <mat-icon fontSet=\"fa\" fontIcon=\"fa-bars\"></mat-icon>\n\n      </button>\n      <span *ngIf=\"(isHandset$ | async)\">\n        <button mat-button routerLink=''>\n          <i class=\"fab fa-angular fa-2x\"></i>\n          Angular Starter\n        </button>\n      </span>\n\n      <div class=\"ml-auto d-flex align-items-center\">\n        <!-- <language-switcher></language-switcher> -->\n        <theme-switcher [selectedTheme]=\"appService.appTheme\" (onSelectTheme)=\"appService.setTheme($event)\"></theme-switcher>\n        <user-dropdown *ngIf=\"user\" (onSignOut)=\"signOut()\" [user]=\"user\"></user-dropdown>\n      </div>\n\n\n\n    </mat-toolbar>\n\n    <div class=\"container-fluid h-100 mb-5 pt-3 \">\n      <router-outlet></router-outlet>\n    </div>\n\n\n  </mat-sidenav-content>\n\n\n\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -735,7 +735,7 @@ var LocalizationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>User Dropdown</h5>\n      <mat-toolbar>\n        <div class=\"ml-auto d-flex align-items-center\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n    </mat-card>\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Collapse menu</h5>\n      <side-menu [menuItems]=\"menuItems\"></side-menu>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Breadcrumbs</h5>\n      <breadcrumbs [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>\n    </mat-card>\n\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Avatars</h5>\n      <div class=\"d-flex justify-content-around\">\n        <ngx-avatar facebookId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar skypeId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar gravatarId=\"adde9b2b981a8083cf084c63ad86f753\"></ngx-avatar>\n        <ngx-avatar name=\"John Doe\"></ngx-avatar>\n      </div>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Swiper Slider</h5>\n      <swiper [config]=\"config\" [(index)]=\"index\">\n        <div class=\"bg-danger\" style=\"height: 100px; \">\n          Slide 1\n        </div>\n        <div class=\"bg-secondary\" style=\"height: 100px; \">\n          Slide 2\n        </div>\n        <div class=\"bg-success\" style=\"height: 100px; \">\n          Slide 3\n        </div>\n      </swiper>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5>Syntax Highlighter</h5>\n\n      <pre><code highlight [textContent]=\"tsCode\"></code></pre>\n    </mat-card>\n\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">User Dropdown</h5>\n      <mat-toolbar class=\"mb-3\">\n        <div class=\"ml-auto\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n      <code-tabs [tabs]=\"userDropdownCodeTabs\"></code-tabs>\n    </mat-card>\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Collapse menu</h5>\n      <collapse-menu class=\"mb-3\" [menuItems]=\"menuItems\"></collapse-menu>\n      <code-tabs [tabs]=\"collapseMenuCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Breadcrumbs</h5>\n      <breadcrumbs class=\"mb-3\" [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>\n      <code-tabs [tabs]=\"breadcrumbsCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Avatars</h5>\n      <div class=\"d-flex justify-content-around mb-3\">\n        <ngx-avatar facebookId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar skypeId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar gravatarId=\"adde9b2b981a8083cf084c63ad86f753\"></ngx-avatar>\n        <ngx-avatar name=\"John Doe\"></ngx-avatar>\n      </div>\n      <code-tabs [tabs]=\"avatarCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Swiper Slider</h5>\n      <swiper [config]=\"swiperConfig\" [(index)]=\"index\">\n        <div class=\"bg-danger\" style=\"height: 100px; \">\n          Slide 1\n        </div>\n        <div class=\"bg-secondary\" style=\"height: 100px; \">\n          Slide 2\n        </div>\n        <div class=\"bg-success\" style=\"height: 100px; \">\n          Slide 3\n        </div>\n      </swiper>\n      <code-tabs [tabs]=\"swiperCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Syntax Highlighter</h5>\n      <pre class=\"mb-3\"><code highlight [textContent]=\"tsCode\"></code></pre>\n      <code-tabs [tabs]=\"syntaxHighlightCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -761,6 +761,7 @@ module.exports = ".swiper-container {\n  width: 100%;\n  height: 100%; }\n\n.swi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomComponentsComponent", function() { return CustomComponentsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _demo_code_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./demo-code-config */ "./src/app/demo/ui-components/custom-components/demo-code-config.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -771,8 +772,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CustomComponentsComponent = /** @class */ (function () {
     function CustomComponentsComponent() {
+        this.exampleCode = _demo_code_config__WEBPACK_IMPORTED_MODULE_1__;
+        this.swiperConfig = {
+            theme: 'agate',
+            observer: true,
+            direction: 'horizontal',
+            threshold: 50,
+            spaceBetween: 100,
+            slidesPerView: 1,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        };
         this.user = {
             'avatar': 'https://lh6.googleusercontent.com/-aSC0Dcj7tIg/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7rul_P8FT8_8B5Rl6ki3yY9ztGYcg/s96-c/photo.jpg',
             'email': 'saleh.omari@247labs.com',
@@ -818,6 +837,27 @@ var CustomComponentsComponent = /** @class */ (function () {
             },
         ];
         this.tsCode = "import { HighlightModule } from 'ngx-highlightjs';\n\n  @NgModule({\n    imports: [\n      HighlightModule.forRoot({ theme: 'agate' })\n    ]\n  })\n  export class AppModule { }";
+        this.avatarCodeTabs = [{ title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["avatarHTML"] }];
+        this.userDropdownCodeTabs = [
+            { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["userDropdownHTML"] },
+            { title: '[user]', code: JSON.stringify(this.user, null, 2) }
+        ];
+        this.collapseMenuCodeTabs = [
+            { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["collapseMenuHTML"] },
+            { title: '[menuItems]', code: JSON.stringify(this.menuItems, null, 2) }
+        ];
+        this.swiperCodeTabs = [
+            { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["swiperHTML"] },
+            { title: '[config]', code: JSON.stringify(this.menuItems, null, 2) }
+        ];
+        this.breadcrumbsCodeTabs = [
+            { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["breadcrumbsHTML"] },
+            { title: '[breadcrumbs]', code: JSON.stringify(this.breadcrumbs, null, 2) }
+        ];
+        this.syntaxHighlightCodeTabs = [
+            { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["syntaxHighlightHTML"] },
+            { title: '[breadcrumbs]', code: JSON.stringify(this.tsCode, null, 2) }
+        ];
     }
     CustomComponentsComponent.prototype.ngOnInit = function () {
     };
@@ -832,6 +872,31 @@ var CustomComponentsComponent = /** @class */ (function () {
     return CustomComponentsComponent;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/demo/ui-components/custom-components/demo-code-config.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/demo/ui-components/custom-components/demo-code-config.ts ***!
+  \**************************************************************************/
+/*! exports provided: avatarHTML, userDropdownHTML, collapseMenuHTML, swiperHTML, breadcrumbsHTML, syntaxHighlightHTML */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "avatarHTML", function() { return avatarHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userDropdownHTML", function() { return userDropdownHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collapseMenuHTML", function() { return collapseMenuHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "swiperHTML", function() { return swiperHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breadcrumbsHTML", function() { return breadcrumbsHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "syntaxHighlightHTML", function() { return syntaxHighlightHTML; });
+var avatarHTML = "\n<ngx-avatar facebookId=\"1508319875\"></ngx-avatar>\n<ngx-avatar skypeId=\"1508319875\"></ngx-avatar>\n<ngx-avatar gravatarId=\"adde9b2b981a8083cf084c63ad86f753\"></ngx-avatar>\n<ngx-avatar name=\"John Doe\"></ngx-avatar>";
+var userDropdownHTML = "<user-dropdown [user]=\"user\"></user-dropdown>";
+var collapseMenuHTML = "<collapse-menu [menuItems]=\"menuItems\"></collapse-menu>";
+var swiperHTML = "<swiper [config]=\"config\" [(index)]=\"index\">\n<div class=\"bg-danger\" style=\"height: 100px; \">\n  Slide 1</div>\n<div class=\"bg-secondary\" style=\"height: 100px; \">\n  Slide 2\n</div>\n<div class=\"bg-success\" style=\"height: 100px; \">\n  Slide 3\n</div>\n</swiper>";
+var breadcrumbsHTML = "<breadcrumbs [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>";
+var syntaxHighlightHTML = "<pre><code highlight [textContent]=\"code\"></code></pre>";
 
 
 /***/ }),
