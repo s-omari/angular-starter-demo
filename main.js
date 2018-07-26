@@ -3843,6 +3843,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/side-menu/side-menu.component */ "./src/app/shared/components/side-menu/side-menu.component.ts");
 /* harmony import */ var _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion-item/accordion-item.component */ "./src/app/shared/components/accordion-item/accordion-item.component.ts");
 /* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/breadcrumbs/breadcrumbs.component */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3862,7 +3865,23 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // Import your AvatarModule
-// import { AvatarModule } from 'ngx-avatar';
+
+
+var DEFAULT_SWIPER_CONFIG = {
+    observer: true,
+    direction: 'horizontal',
+    threshold: 50,
+    spaceBetween: 5,
+    slidesPerView: 1,
+    centeredSlides: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+};
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -3873,7 +3892,9 @@ var SharedModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
-                _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"]
+                _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"],
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"]
             ],
             declarations: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -3894,7 +3915,15 @@ var SharedModule = /** @class */ (function () {
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_12__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SwiperModule"]
             ],
+            providers: [
+                {
+                    provide: ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_13__["SWIPER_CONFIG"],
+                    useValue: DEFAULT_SWIPER_CONFIG
+                }
+            ]
         })
     ], SharedModule);
     return SharedModule;
