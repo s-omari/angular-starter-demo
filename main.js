@@ -2881,7 +2881,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'restricted',
+    {
+        path: 'restricted',
         loadChildren: './application/restricted/restricted.module#RestrictedModule',
         canActivate: [_shared_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_1__["AuthGuardService"]]
     },
@@ -2889,7 +2890,7 @@ var routes = [
     { path: 'home', loadChildren: './landing-page/landing-page.module#LandingPageModule' },
     { path: 'demo', loadChildren: './demo/demo.module#DemoModule' }
 ];
-var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes);
+var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, { useHash: true });
 
 
 /***/ }),
