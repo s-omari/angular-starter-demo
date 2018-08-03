@@ -3665,6 +3665,44 @@ var MaterialModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shared/pipes/keys.pipe.ts":
+/*!*******************************************!*\
+  !*** ./src/app/shared/pipes/keys.pipe.ts ***!
+  \*******************************************/
+/*! exports provided: KeysPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KeysPipe", function() { return KeysPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var KeysPipe = /** @class */ (function () {
+    function KeysPipe() {
+    }
+    KeysPipe.prototype.transform = function (value, args) {
+        var keys = [];
+        for (var key in value) {
+            keys.push(key);
+        }
+        return keys;
+    };
+    KeysPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({ name: 'keys' })
+    ], KeysPipe);
+    return KeysPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/services/app.service.ts":
 /*!************************************************!*\
   !*** ./src/app/shared/services/app.service.ts ***!
@@ -3918,6 +3956,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-highlightjs */ "./node_modules/ngx-highlightjs/fesm5/ngx-highlightjs.js");
 /* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/keys.pipe */ "./src/app/shared/pipes/keys.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3940,6 +3979,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 // Import your AvatarModule
 
 // Import  HighlightModule
+
 
 
 var DEFAULT_SWIPER_CONFIG = {
@@ -3980,6 +4020,7 @@ var SharedModule = /** @class */ (function () {
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
                 _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
                 _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"],
+                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__["KeysPipe"],
             ],
             exports: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -3995,7 +4036,8 @@ var SharedModule = /** @class */ (function () {
                 ngx_avatar__WEBPACK_IMPORTED_MODULE_13__["AvatarModule"],
                 ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SwiperModule"],
                 ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"],
-                _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"]
+                _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"],
+                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__["KeysPipe"]
             ],
             providers: [
                 {

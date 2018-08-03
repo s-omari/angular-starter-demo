@@ -206,7 +206,7 @@ var CrudTableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  *ngIf=\"crudConfig !== null\"  class=\"row h-100 \">\n    \n    <div class=\"col h-100\" \n        [hidden]=\"!showCenter\" \n        [class.col-md-6]=\"!centerExpanded\" \n        [class.col-md-12]=\"centerExpanded\">\n\n    \n\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <div class=\"d-flex align-items-center\">\n                    <h3> {{ crudConfig?.entityTitlePlural | titlecase}} </h3>\n                    <button mat-button class=\"ml-auto\" (click)=\"openCreateForm()\">\n                        <i class=\"fas fa-plus\"></i> Create {{ crudConfig?.entityTitle }}</button>\n                </div>\n            </div>\n        </div>\n\n\n        <crud-table\n            (onEntitySelect)=\"selectEntity($event)\" \n            [entities]=\"entities\" \n            [selectedEntityId]=\"1\"\n            [columns]=\"crudConfig.showColumns\">\n        </crud-table>\n\n\n        <!-- <button *ngIf=\"!showRight\" mat-button (click)=\"shrinkRight()\" >\n            Open Right\n        </button> -->\n    </div>\n\n<div id=\"Right\" class=\"col h-100\"  \n    style=\"border-left: 1px solid #c5c5c5;\"\n    [hidden]=\"!showRight\" \n    [class.col-md-6]=\"!rightExpanded\" \n    [class.col-md-12]=\"rightExpanded\">\n\n  \n    <div class=\"toggles\">\n        <span class=\"float-right\" (click)=\"closeRight()\">\n            <i class=\"fas fa-times close-right\"></i>\n        </span>\n        <span *ngIf=\"!rightExpanded\" class=\"expand-right float-left\" (click)=\"expandRight()\">\n            <i class=\"fas fa-expand-arrows-alt\"></i>\n        </span>\n        <span *ngIf=\"rightExpanded\" class=\"shrink-right float-left\" (click)=\"shrinkRight()\">\n            <i class=\"fas fa-compress\"></i>\n        </span>\n        <div class=\"clear-both\" style=\"clear:both\"></div>\n    </div>\n\n\n\n\n    <div *ngIf=\"selectedEntity\">\n        <div>\n            <div class=\"float-right\">\n                <button (click)=\"setRightContent('ViewSelected')\"\n                mat-button\n                matTooltip=\"View\" \n                [matTooltipPosition]=\"'above'\" \n                aria-label=\"\">\n                <i class=\"fas fa-eye\"></i>\n                    </button>   \n\n                    <button (click)=\"setRightContent('UpdateForm')\"\n                    mat-button\n                    matTooltip=\"Edit\" \n                    [matTooltipPosition]=\"'above'\" \n                    aria-label=\"\">\n                    <i class=\"fas fa-edit\"></i>\n                    </button>  \n\n\n                        <button (click)=\"deleteEntity(selectedEntity)\"\n                        mat-button\n                        matTooltip=\"Delete\" \n                        [matTooltipPosition]=\"'above'\" \n                        aria-label=\"\">\n                        <i class=\"fas fa-trash-alt\"></i>\n                        </button>  \n            </div>\n\n            <div style=\"clear:both\"></div>\n\n\n\n        </div>\n\n\n\n        <div *ngIf=\"rightContent == 'ViewSelected'\">\n            <h3> View {{ crudConfig?.entityTitle | titlecase}} </h3>\n\n            <pre>{{ selectedEntity | json }}</pre>\n        </div>\n\n\n\n\n    </div>\n\n\n    <div *ngIf=\"rightContent == 'CreateForm' || rightContent == 'UpdateForm'\">\n        <h4 *ngIf=\"rightContent == 'CreateForm'\">Create new {{ crudConfig?.entityTitle }} </h4>\n        <h4 *ngIf=\"rightContent == 'UpdateForm'\">Update {{ crudConfig?.entityTitle }}</h4>\n\n\n        <!-- <crud-form \n        [formConfig]=\"formConfig\" \n        [entity]=\"selectedEntity\" \n        [rightContent]=\"rightContent$ | async\" \n        (create)=\"onCreate($event)\"\n        (update)=\"onUpdate($event)\" \n        (remove)=\"onDelete($event)\"></crud-form> -->\n\n\n\n\n        <crud-form\n        [formModel]=\"formModel\" \n        [entity]=\"selectedEntity\" \n        [rightContent]=\"rightContent\"></crud-form>\n\n\n    </div>\n\n</div>\n</div>\n\n\n"
+module.exports = "<div *ngIf=\"crudConfig !== null\" class=\"row h-100 \">\n\n  <div class=\"col h-100\" [hidden]=\"!showCenter\" [class.col-md-6]=\"!centerExpanded\" [class.col-md-12]=\"centerExpanded\">\n\n\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"d-flex align-items-center\">\n          <h3> {{ crudConfig?.entityTitlePlural | titlecase}} </h3>\n          <button mat-button class=\"ml-auto\" (click)=\"openCreateForm()\">\n            <i class=\"fas fa-plus\"></i> Create {{ crudConfig?.entityTitle }}</button>\n        </div>\n      </div>\n    </div>\n\n\n    <crud-table (onEntitySelect)=\"selectEntity($event)\" [entities]=\"entities\" [selectedEntityId]=\"1\" [columns]=\"crudConfig.showColumns\">\n    </crud-table>\n\n\n    <!-- <button *ngIf=\"!showRight\" mat-button (click)=\"shrinkRight()\" >\n            Open Right\n        </button> -->\n  </div>\n\n  <div id=\"Right\" class=\"col h-100\" style=\"border-left: 1px solid #c5c5c5;\" [hidden]=\"!showRight\" [class.col-md-6]=\"!rightExpanded\"\n    [class.col-md-12]=\"rightExpanded\">\n\n\n    <div class=\"toggles\">\n      <span class=\"float-right\" (click)=\"closeRight()\">\n        <i class=\"fas fa-times close-right\"></i>\n      </span>\n      <span *ngIf=\"!rightExpanded\" class=\"expand-right float-left\" (click)=\"expandRight()\">\n        <i class=\"fas fa-expand-arrows-alt\"></i>\n      </span>\n      <span *ngIf=\"rightExpanded\" class=\"shrink-right float-left\" (click)=\"shrinkRight()\">\n        <i class=\"fas fa-compress\"></i>\n      </span>\n      <div class=\"clear-both\" style=\"clear:both\"></div>\n    </div>\n\n\n\n\n    <div *ngIf=\"selectedEntity\">\n      <div>\n        <div class=\"float-right\">\n          <button (click)=\"setRightContent('ViewSelected')\" mat-button matTooltip=\"View\" [matTooltipPosition]=\"'above'\" aria-label=\"\">\n            <i class=\"fas fa-eye\"></i>\n          </button>\n\n          <button (click)=\"setRightContent('UpdateForm')\" mat-button matTooltip=\"Edit\" [matTooltipPosition]=\"'above'\" aria-label=\"\">\n            <i class=\"fas fa-edit\"></i>\n          </button>\n\n\n          <button (click)=\"deleteEntity(selectedEntity)\" mat-button matTooltip=\"Delete\" [matTooltipPosition]=\"'above'\" aria-label=\"\">\n            <i class=\"fas fa-trash-alt\"></i>\n          </button>\n        </div>\n\n        <div style=\"clear:both\"></div>\n\n\n\n      </div>\n\n\n\n      <div *ngIf=\"rightContent == 'ViewSelected'\">\n        <h3> View {{ crudConfig?.entityTitle | titlecase}} </h3>\n\n        <ul>\n          <li class=\"row\" *ngFor=\"let key of selectedEntity | keys\">\n            <span class=\"col-4\">{{key}}: </span>\n            <span class=\"col-8\">{{selectedEntity[key]}}</span>\n          </li>\n        </ul>\n      </div>\n\n\n\n\n    </div>\n\n\n    <div *ngIf=\"rightContent == 'CreateForm' || rightContent == 'UpdateForm'\">\n      <h4 *ngIf=\"rightContent == 'CreateForm'\">Create new {{ crudConfig?.entityTitle }} </h4>\n      <h4 *ngIf=\"rightContent == 'UpdateForm'\">Update {{ crudConfig?.entityTitle }}</h4>\n\n\n      <!-- <crud-form \n        [formConfig]=\"formConfig\" \n        [entity]=\"selectedEntity\" \n        [rightContent]=\"rightContent$ | async\" \n        (create)=\"onCreate($event)\"\n        (update)=\"onUpdate($event)\" \n        (remove)=\"onDelete($event)\"></crud-form> -->\n\n\n\n\n      <crud-form [formModel]=\"formModel\" [entity]=\"selectedEntity\" [rightContent]=\"rightContent\"></crud-form>\n\n\n    </div>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -288,6 +288,11 @@ var CrudComponent = /** @class */ (function () {
                     _this.crudConfig = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["usersConfig"];
                     _this.entities = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["usersList"];
                     _this.formModel = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["usersConfig"].FormConfig;
+                    break;
+                case 'address':
+                    _this.crudConfig = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["addressConfig"];
+                    _this.entities = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["addressList"];
+                    _this.formModel = _crudConfig__WEBPACK_IMPORTED_MODULE_4__["addressConfig"].FormConfig;
                     break;
                 default:
                     console.log('no entityType params');
@@ -449,15 +454,17 @@ var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forCh
 /*!*****************************************!*\
   !*** ./src/app/demo/crud/crudConfig.ts ***!
   \*****************************************/
-/*! exports provided: categoriesConfig, usersConfig, categoriesList, usersList */
+/*! exports provided: categoriesConfig, usersConfig, addressConfig, categoriesList, usersList, addressList */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "categoriesConfig", function() { return categoriesConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usersConfig", function() { return usersConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addressConfig", function() { return addressConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "categoriesList", function() { return categoriesList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usersList", function() { return usersList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addressList", function() { return addressList; });
 /* harmony import */ var _crudFormModels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudFormModels */ "./src/app/demo/crud/crudFormModels.ts");
 
 var categoriesConfig = {
@@ -472,7 +479,16 @@ var usersConfig = {
     FormConfig: _crudFormModels__WEBPACK_IMPORTED_MODULE_0__["UsersFormModel"],
     entityTitle: 'user',
     entityTitlePlural: 'users',
-    showColumns: ['first_name', 'email']
+    showColumns: ['first_name', 'email'],
+    hasOne: ['address']
+};
+var addressConfig = {
+    apiPath: 'http://restful.api/address',
+    FormConfig: _crudFormModels__WEBPACK_IMPORTED_MODULE_0__["UsersFormModel"],
+    entityTitle: 'address',
+    entityTitlePlural: 'addresses',
+    showColumns: ['street', 'city'],
+    hasOne: ['address']
 };
 // replace with db
 var categoriesList = [
@@ -485,6 +501,11 @@ var usersList = [
     { 'id': 3, 'first_name': 'moe', 'last_name': 'moe', 'email': 'joe@ipsum.com' },
     { 'id': 4, 'first_name': 'joe', 'last_name': 'moe', 'email': 'joe@ipsum.com' },
     { 'id': 5, 'first_name': 'joe', 'last_name': 'moe', 'email': 'joe@ipsum.com' },
+];
+var addressList = [
+    { 'id': 1, 'street': 'one street', 'city': 'Toronto', user_id: 1 },
+    { 'id': 2, 'street': '32 street', 'city': 'Montreal', user_id: 2 },
+    { 'id': 4, 'street': 'onthe rd', 'city': 'Hamilton', user_id: 3 },
 ];
 
 

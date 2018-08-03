@@ -45,6 +45,12 @@ var Items = [
                 'route': 'demo/crud',
                 'params': { 'entityType': 'user' },
                 'icon': 'star'
+            },
+            {
+                'title': 'Addresses',
+                'route': 'demo/crud',
+                'params': { 'entityType': 'address' },
+                'icon': 'star'
             }
         ]
     },
@@ -735,7 +741,7 @@ var LocalizationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n\n  <div class=\"col-12\">\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">User Dropdown</h5>\n      <mat-toolbar class=\"mb-3\">\n        <div class=\"ml-auto\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n      <code-tabs [tabs]=\"userDropdownCodeTabs\"></code-tabs>\n    </mat-card>\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Collapse menu</h5>\n      <collapse-menu class=\"mb-3\" [menuItems]=\"menuItems\"></collapse-menu>\n      <code-tabs [tabs]=\"collapseMenuCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Breadcrumbs</h5>\n      <breadcrumbs class=\"mb-3\" [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>\n      <code-tabs [tabs]=\"breadcrumbsCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Avatars</h5>\n      <div class=\"d-flex justify-content-around mb-3\">\n        <ngx-avatar facebookId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar skypeId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar gravatarId=\"adde9b2b981a8083cf084c63ad86f753\"></ngx-avatar>\n        <ngx-avatar name=\"John Doe\"></ngx-avatar>\n      </div>\n      <code-tabs [tabs]=\"avatarCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Swiper Slider</h5>\n      <swiper [config]=\"swiperConfig\" [(index)]=\"index\">\n        <div class=\"bg-danger\" style=\"height: 100px; \">\n          Slide 1\n        </div>\n        <div class=\"bg-secondary\" style=\"height: 100px; \">\n          Slide 2\n        </div>\n        <div class=\"bg-success\" style=\"height: 100px; \">\n          Slide 3\n        </div>\n      </swiper>\n      <code-tabs [tabs]=\"swiperCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n    <mat-card class=\"mt-3 mb-3\">\n      <h5 class=\"mb-3\">Syntax Highlighter</h5>\n      <pre class=\"mb-3\"><code highlight [textContent]=\"tsCode\"></code></pre>\n      <code-tabs [tabs]=\"syntaxHighlightCodeTabs\"></code-tabs>\n    </mat-card>\n\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50 \">\n      <h5 class=\"mb-3\">User Dropdown</h5>\n      <mat-toolbar class=\"mb-3\">\n        <div class=\"ml-auto\">\n          <user-dropdown *ngIf=\"user\" [user]=\"user\"></user-dropdown>\n        </div>\n      </mat-toolbar>\n    </div>\n\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"userDropdownCodeTabs\"></code-tabs>\n    </div>\n  </mat-card>\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50\">\n      <h5 class=\"mb-3\">Collapse menu</h5>\n      <collapse-menu class=\"mb-3\" [menuItems]=\"menuItems\"></collapse-menu>\n    </div>\n\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"collapseMenuCodeTabs\"></code-tabs>\n    </div>\n\n  </mat-card>\n\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50\">\n      <h5 class=\"mb-3\">Breadcrumbs</h5>\n      <breadcrumbs class=\"mb-3\" [breadcrumbs]=\"breadcrumbs\"></breadcrumbs>\n    </div>\n\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"breadcrumbsCodeTabs\"></code-tabs>\n    </div>\n  </mat-card>\n\n\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50\">\n      <h5 class=\"mb-3\">Avatars</h5>\n      <div class=\"d-flex justify-content-around mb-3\">\n        <ngx-avatar facebookId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar skypeId=\"1508319875\"></ngx-avatar>\n        <ngx-avatar gravatarId=\"adde9b2b981a8083cf084c63ad86f753\"></ngx-avatar>\n        <ngx-avatar name=\"John Doe\"></ngx-avatar>\n      </div>\n    </div>\n\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"avatarCodeTabs\"></code-tabs>\n    </div>\n  </mat-card>\n\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50\">\n      <h5 class=\"mb-3\">Swiper Slider</h5>\n      <swiper class=\"d-block\" [config]=\"swiperConfig\" [(index)]=\"index\">\n        <div class=\"bg-danger\" style=\"height: 220px; \">\n          Slide 1\n        </div>\n        <div class=\"bg-secondary\" style=\"height: 220px; \">\n          Slide 2\n        </div>\n        <div class=\"bg-success\" style=\"height: 220px; \">\n          Slide 3\n        </div>\n      </swiper>\n    </div>\n\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"swiperCodeTabs\"></code-tabs>\n    </div>\n  </mat-card>\n\n\n  <mat-card class=\"component-demo mt-3 mb-3 mh-30 d-flex\">\n    <div class=\"w-50\">\n      <h5 class=\"mb-3\">Syntax Highlighter</h5>\n      <pre class=\"mb-3\"><code highlight [textContent]=\"tsCode\"></code></pre>\n    </div>\n    <div class=\"w-50 p-3\">\n      <code-tabs [tabs]=\"syntaxHighlightCodeTabs\"></code-tabs>\n    </div>\n\n  </mat-card>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -848,7 +854,7 @@ var CustomComponentsComponent = /** @class */ (function () {
         ];
         this.swiperCodeTabs = [
             { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["swiperHTML"] },
-            { title: '[config]', code: JSON.stringify(this.menuItems, null, 2) }
+            { title: '[config]', code: JSON.stringify(this.swiperConfig, null, 2) }
         ];
         this.breadcrumbsCodeTabs = [
             { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["breadcrumbsHTML"] },
@@ -856,7 +862,7 @@ var CustomComponentsComponent = /** @class */ (function () {
         ];
         this.syntaxHighlightCodeTabs = [
             { title: 'HTML', code: _demo_code_config__WEBPACK_IMPORTED_MODULE_1__["syntaxHighlightHTML"] },
-            { title: '[breadcrumbs]', code: JSON.stringify(this.tsCode, null, 2) }
+            { title: '[textContent]', code: this.tsCode }
         ];
     }
     CustomComponentsComponent.prototype.ngOnInit = function () {
