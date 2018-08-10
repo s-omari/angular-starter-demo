@@ -2845,7 +2845,6 @@ var AppModule = /** @class */ (function () {
                 _shared_shared_module__WEBPACK_IMPORTED_MODULE_10__["SharedModule"],
                 _app_routing__WEBPACK_IMPORTED_MODULE_11__["routing"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                //   MaterialModule,
                 _shared_dynamic_forms_dynamic_forms_module__WEBPACK_IMPORTED_MODULE_5__["DynamicFormsModule"]
             ],
             providers: [
@@ -3204,6 +3203,89 @@ var CollapseMenuComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], CollapseMenuComponent);
     return CollapseMenuComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/floating-menu/floating-menu.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/floating-menu/floating-menu.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"floating-menu\">\n\n  <span [@myAnimationTrigger]=\"state\" (click)=\"toggleState()\" class=\"trigger\">\n    <</span>\n      <div class=\"ml-4px\">\n        <h3>Floating Menu</h3>\n        <a href=\"/css/\">CSS</a>\n        <a href=\"/html/\">HTML</a>\n      </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/floating-menu/floating-menu.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/floating-menu/floating-menu.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".floating-menu {\n  font-family: sans-serif;\n  padding: 5px;\n  width: 130px;\n  z-index: 100;\n  position: fixed;\n  top: 97px;\n  right: -95px; }\n  .floating-menu .menu {\n    background: yellowgreen; }\n  .floating-menu a,\n.floating-menu h3 {\n  font-size: 0.9em;\n  display: block;\n  margin: 0 0.5em;\n  color: white; }\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/floating-menu/floating-menu.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/shared/components/floating-menu/floating-menu.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: FloatingMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FloatingMenuComponent", function() { return FloatingMenuComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FloatingMenuComponent = /** @class */ (function () {
+    function FloatingMenuComponent() {
+        this.state = 'close';
+    }
+    FloatingMenuComponent.prototype.ngOnInit = function () {
+    };
+    FloatingMenuComponent.prototype.toggleState = function () {
+        this.state = this.state === 'close' ? 'open' : 'close';
+    };
+    FloatingMenuComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'floating-menu',
+            template: __webpack_require__(/*! ./floating-menu.component.html */ "./src/app/shared/components/floating-menu/floating-menu.component.html"),
+            styles: [__webpack_require__(/*! ./floating-menu.component.scss */ "./src/app/shared/components/floating-menu/floating-menu.component.scss")],
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('myAnimationTrigger', [
+                    // define states
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('open', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ right: 0 })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('close', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ background: 'grey' })),
+                    // Transition occurs when the state value
+                    // bound to 'myAnimationTrigger' changes from 'open' to 'close'
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('open => close', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(500)),
+                    // Run the same animation for both directions
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('open <=> close', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(500)),
+                    // Define multiple state-change pairs separated by commas
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('open => close, close => void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(500))
+                ])
+            ]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FloatingMenuComponent);
+    return FloatingMenuComponent;
 }());
 
 
@@ -3952,17 +4034,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion-item/accordion-item.component */ "./src/app/shared/components/accordion-item/accordion-item.component.ts");
 /* harmony import */ var _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/breadcrumbs/breadcrumbs.component */ "./src/app/shared/components/breadcrumbs/breadcrumbs.component.ts");
 /* harmony import */ var _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/code-tabs/code-tabs.component */ "./src/app/shared/components/code-tabs/code-tabs.component.ts");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-highlightjs */ "./node_modules/ngx-highlightjs/fesm5/ngx-highlightjs.js");
-/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
-/* harmony import */ var _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/keys.pipe */ "./src/app/shared/pipes/keys.pipe.ts");
+/* harmony import */ var _components_floating_menu_floating_menu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/floating-menu/floating-menu.component */ "./src/app/shared/components/floating-menu/floating-menu.component.ts");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/ngx-avatar.umd.js");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(ngx_avatar__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var ngx_highlightjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-highlightjs */ "./node_modules/ngx-highlightjs/fesm5/ngx-highlightjs.js");
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/dist/ngx-swiper-wrapper.es5.js");
+/* harmony import */ var _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/keys.pipe */ "./src/app/shared/pipes/keys.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -4008,9 +4092,9 @@ var SharedModule = /** @class */ (function () {
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
                 _language_switcher_language_switcher_module__WEBPACK_IMPORTED_MODULE_5__["LanguageSwitcherModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_13__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SwiperModule"],
-                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"].forRoot({ theme: 'github' })
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_14__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_16__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_15__["HighlightModule"].forRoot({ theme: 'github' })
             ],
             declarations: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -4020,7 +4104,8 @@ var SharedModule = /** @class */ (function () {
                 _components_accordion_item_accordion_item_component__WEBPACK_IMPORTED_MODULE_10__["AccordionItemComponent"],
                 _components_breadcrumbs_breadcrumbs_component__WEBPACK_IMPORTED_MODULE_11__["BreadcrumbsComponent"],
                 _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"],
-                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__["KeysPipe"],
+                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_17__["KeysPipe"],
+                _components_floating_menu_floating_menu_component__WEBPACK_IMPORTED_MODULE_13__["FloatingMenuComponent"],
             ],
             exports: [
                 _components_theme_switcher_theme_switcher_component__WEBPACK_IMPORTED_MODULE_6__["ThemeSwitcherComponent"],
@@ -4033,15 +4118,16 @@ var SharedModule = /** @class */ (function () {
                 _material_material_module__WEBPACK_IMPORTED_MODULE_3__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _social_auth_social_auth_module__WEBPACK_IMPORTED_MODULE_4__["SocialAuthModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_13__["AvatarModule"],
-                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SwiperModule"],
-                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_14__["HighlightModule"],
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_14__["AvatarModule"],
+                ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_16__["SwiperModule"],
+                ngx_highlightjs__WEBPACK_IMPORTED_MODULE_15__["HighlightModule"],
                 _components_code_tabs_code_tabs_component__WEBPACK_IMPORTED_MODULE_12__["CodeTabsComponent"],
-                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_16__["KeysPipe"]
+                _pipes_keys_pipe__WEBPACK_IMPORTED_MODULE_17__["KeysPipe"],
+                _components_floating_menu_floating_menu_component__WEBPACK_IMPORTED_MODULE_13__["FloatingMenuComponent"]
             ],
             providers: [
                 {
-                    provide: ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_15__["SWIPER_CONFIG"],
+                    provide: ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_16__["SWIPER_CONFIG"],
                     useValue: DEFAULT_SWIPER_CONFIG
                 }
             ]
